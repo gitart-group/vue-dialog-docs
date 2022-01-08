@@ -1,0 +1,3 @@
+Say Hello World with gitart-vue-dialog!
+
+Edit and see results!

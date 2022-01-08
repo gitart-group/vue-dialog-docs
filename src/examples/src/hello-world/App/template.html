@@ -1,0 +1,17 @@
+<div>
+  <h1>Content</h1>
+
+  <button @click="dialogState = true">
+    Open Dialog
+  </button>
+
+  <GDialog v-model="dialogState">
+    <div class="dialog">
+      <h2>
+        Dialog Content
+      </h2>
+
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </GDialog>
+</div>

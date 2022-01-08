@@ -1,0 +1,45 @@
+{
+  "scripts": {
+    "dev": "vitepress dev src",
+    "build": "vitepress build src",
+    "serve": "vitepress serve src"
+  },
+  "dependencies": {
+    "@mdi/js": "^6.5.95",
+    "@vue/compiler-sfc": "^3.2.26",
+    "@vue/repl": "^0.4.8",
+    "@vue/theme": "^0.1.30",
+    "@vueuse/core": "^7.5.1",
+    "dynamics.js": "^1.1.5",
+    "gitart-vue-dialog": "^1.2.1",
+    "gsap": "^3.9.0",
+    "sass": "^1.45.2",
+    "shiki": "0.10.0",
+    "vitepress": "^0.20.10",
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@types/node": "^16.9.1",
+    "@types/prismjs": "^1.16.6",
+    "prismjs": "^1.25.0",
+    "vite-plugin-windicss": "^1.6.1",
+    "windicss": "^3.4.2"
+  },
+  "pnpm": {
+    "packageExtensions": {
+      "@docsearch/react": {
+        "peerDepndenciesMeta": {
+          "react": {
+            "optional": true
+          },
+          "react-dom": {
+            "optional": true
+          },
+          "@types/react": {
+            "optional": true
+          }
+        }
+      }
+    }
+  }
+}

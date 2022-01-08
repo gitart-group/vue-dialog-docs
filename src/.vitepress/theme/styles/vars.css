@@ -1,0 +1,10 @@
+html {
+  --code-bg-color: #292d3e;
+  --t-brand: rgb(5, 150, 105);
+  --t-brand-rgb: 5, 150, 105;
+}
+html.dark {
+  --t-brand: rgb(5, 150, 105);
+  --code-bg-color: #242424;
+  --t-brand-rgb: 5, 150, 105;
+}

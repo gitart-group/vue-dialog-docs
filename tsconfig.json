@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "strict": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@theme-components/*": ["./src/.vitepress/theme/components/*"],
+    },
+  },
+  "include": [
+    "./src/**/*",
+    "./src/.vitepress/**/*",
+  ],
+}

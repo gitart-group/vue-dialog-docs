@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "gitart-vue-dialog": "https://cdn.jsdelivr.net/npm/gitart-vue-dialog@1.2.1/dist/index.mjs",
+    "gitart-vue-dialog/dist/style.css": "https://cdn.jsdelivr.net/npm/gitart-vue-dialog@1.2.1/dist/style.css"
+  }
+}
