@@ -123,7 +123,7 @@ export default defineConfig({
     socialLinks: [
       {
         icon: 'github',
-        link: 'https://github.com/MichaelGitArt/gitart-vue-dialog',
+        link: 'https://github.com/gitart-group/vue-dialog',
       },
     ],
 
