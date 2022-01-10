@@ -10,11 +10,12 @@ aside: deep
   import TransitionWrapper from './demos/TransitionWrapper.vue'
   import PersistentWrapper from './demos/PersistentWrapper.vue'
   import ScrollableWrapper from './demos/ScrollableWrapper.vue'
+  import LocalWrapper from './demos/LocalWrapper.vue'
 </script>
 
 # Component Usage
 
-<!-- - [GDialog Details](/docs/components/g-dialog) -->
+- [GDialog Details](/guide/components/g-dialog)
 
 The `GDialog` component is the main part of the package. Install it and use it like any other component.
 
@@ -130,3 +131,11 @@ With `persistent` clicking on the outside does not close the dialog
 `scrollable` allows you to make scroll content somewhere inside your dialog. To make fixed actions or header, etc...
 
 <ScrollableWrapper />
+
+
+### Local
+
+`local` allows you to show your dialog above a specific part of your app. 
+It disables teleportation to the body, so the dialog attaches the closest parent element with `position: relative;`.
+
+<LocalWrapper />
