@@ -20,6 +20,7 @@ z-index of the component is 200. So be careful. Don't make z-index of the header
 | [border-radius](#border-radius) | `boolean` `number` `string` | `true` |
 | [content-class](#content-class) | `string` | `''` |
 | [depressed](#depressed) | `boolean` | `false` |
+| [fullscreen](#fullscreen) | `boolean` | `false` |
 | [height](#height) |  `string` `number` | `'auto'` |
 | [local](#local) | `boolean` | `false` |
 | [max-width](#max-width) | `string` `number` | `'none'` |
@@ -79,6 +80,18 @@ Applies the class to the content (div that wraps the main slot)
 
 - **Details:** <br/>
 Disables default box-shadow
+
+---
+
+### `fullscreen`
+- **Type:** `Boolean`
+
+- **Default:** `false`
+
+- **Details:** <br/>
+  Enables a fullscreen mode for the dialog.
+
+  [Example](/guide/usage/component-usage#fullscreen).
 
 ---
 
