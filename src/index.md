@@ -40,13 +40,6 @@ page: true
   </div>
 </section>
 
-
-
-<section id="ways-to-use">
-  <!-- TODO show toggleable example between CDN vs. SFC usage -->
-</section>
-
-
 <style scoped>
 section {
   padding: 42px 32px;

@@ -39,7 +39,6 @@ export default defineComponent({
 
 ## Usage
 
-<!-- You can access the methods and properties of the plugin by injection `inject(dialogInjectionKey)` or `this.$dialog` in option api. -->
 There are two ways to access the methods and properties of the plugin (option and composition api). See below:
 
 ### **Option api**: 
@@ -107,8 +106,7 @@ To know how all these properties work, look below.
 
 - **Details:** <br/>
   The method adds your extended `data` argument to [dialogs](#dialogs) array.
-  <!-- TODO return link -->
-  <!-- The `data.component` will be rendered in the [GDialogRoot](/guide/components/g-dialog-root) with the props you add to `data.props` -->
+  The `data.component` will be rendered in the [GDialogRoot](/guide/components/g-dialog-root) with the props you add to `data.props`
 
   ::: warning
     `data.props` should not contain modelValue. The `addDialog` overwrites it

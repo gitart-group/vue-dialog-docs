@@ -39,9 +39,9 @@ z-index of the component is 200. So be careful. Don't make z-index of the header
 - **Details:** <br/>
   Sets background to the dialog content
 
-  - `true` - remains [default](#content-bg) backround, 
+  - `true` - remains [default](#content-bg) background, 
   - `false` - removes background
-  - `String` - sets some backround to the current dialog content
+  - `String` - sets some background to the current dialog content
 
   You can set default value for all dialogs by CSS var [--g-dialog-content-bg](#content-bg)
 
@@ -98,9 +98,11 @@ Sets height for the dialog
 
 - **Details:** <br/>
   Enables the local mode. The dialog will not be teleported to the body and will be positioned like `absolute` instead of `fixed`.
-  Be sure to specify `position: relative;` for the parent element where you place the dialog
+  Be sure to specify `position: relative;` for the parent element where you place the dialog.
 
-  The props can be useful if you want to show some windows above a specific part of your app
+  The props can be useful if you want to show some windows above a specific part of your app.
+
+  [Example](/guide/usage/component-usage#local).
 
   `v1.2.0+`
 
@@ -132,10 +134,10 @@ v-model props to activate and deactivate the dialog
 - **Default:** `true`
 
 - **Details:** <br/>
-Sets dialog overlay background. 
-  - `true` - remains [default](#overlay-bg) backround, 
+  Sets dialog overlay background. 
+  - `true` - remains [default](#overlay-bg) background, 
   - `false` - removes background
-  - `String` - sets some backround to the current dialog overlay
+  - `String` - sets some background to the current dialog overlay
 
   You can set default value for all dialogs by CSS var [--g-dialog-overlay-bg](#overlay-bg)
 
@@ -147,7 +149,7 @@ Sets dialog overlay background.
 - **Default:** `false`
 
 - **Details:** <br/>
-Makes clicking outside of the element will not deactivate the dialog
+  Makes clicking outside of the element will not deactivate the dialog. [Example](/guide/usage/component-usage#persistent).
 
 ---
 
@@ -156,7 +158,9 @@ Makes clicking outside of the element will not deactivate the dialog
 
 - **Default:** `false`
 
-<!-- - **Details:** <br/> -->
+- **Details:** <br/>
+Applies the `display: flex;` to the dialog content wrapper element. It allows you to implement scrollable content to a specific part of a dialog.
+[Here](/guide/usage/component-usage#scrollable) is an example of use.
 
 ---
 ### `transition`
@@ -165,36 +169,39 @@ Makes clicking outside of the element will not deactivate the dialog
 - **Default:** `'g-dialog-transition'`
 
 - **Details:** <br/>
-Sets the component custom transition name (leaving and entering the dialog). Here is example:
+  Sets the component custom transition name (leaving and entering the dialog).
 
-```scss
-// transition="custom-rotate-transition"
-.custom-rotate-transition {
-  &-enter-active,
-  &-leave-active {
-    transition-timing-function: linear;
-    transition-duration: 0.1s; // not higher than 200ms
+  [Example](/guide/usage/component-usage#transition).
+
+
+  ```scss
+  // transition="custom-rotate-transition"
+  .custom-rotate-transition {
+    &-enter-active,
+    &-leave-active {
+      transition-timing-function: linear;
+      transition-duration: 0.1s; // not higher than 200ms
+    }
+
+    &-enter-from {
+      transform: translate(0, 30px) rotate(12deg);
+      opacity: 0;
+    }
+
+    &-leave-to {
+      transform: translate(0, 30px) rotate(4deg);
+      opacity: 0;
+    }
   }
+  ```
 
-  &-enter-from {
-    transform: translate(0, 30px) rotate(12deg);
-    opacity: 0;
-  }
+  ::: warning
+    On leaving don't set `transition-duration` higher than `150ms`-`200ms` if you are using
+    plugin method [addDialog](/guide/usage/plugin-usage#adddialog-data).
 
-  &-leave-to {
-    transform: translate(0, 30px) rotate(4deg);
-    opacity: 0;
-  }
-}
-```
-
-::: warning
-  On leaving don't set `transition-duration` higher than `150ms`-`200ms` if you are using
-  plugin method [addDialog](/guide/usage/plugin-usage#adddialog-data).
-
-  [removeDialog](/guide/usage/plugin-usage#removedialog-index) disables a dialog and deletes it after 150ms
-  completely, so the custom transition may be truncated
-:::
+    [removeDialog](/guide/usage/plugin-usage#removedialog-index) disables a dialog and deletes it after 150ms
+    completely, so the custom transition may be truncated
+  :::
 
 ---
 ### `width`

@@ -39,8 +39,7 @@ const app = Vue.createApp(/* ... */)
 app.use(dialogPlugin)
 ```
 
-<!-- TODO link to plugin guide -->
-More about that read on the plugin guide.
+More about that read on the [plugin guide](/guide/usage/plugin-usage).
 
 ## Minimal working example
 
@@ -99,5 +98,4 @@ Pretty **ugly** dialog, right? Let's add background and some content. Take a loo
 
 <QuickStartStyledWrapper class="mb-6" />
 
-Looks better. 
-<!-- Here is more advanced [examples](https://michaelgitart.github.io/gitart-vue-dialog) -->
+Looks better.
