@@ -174,7 +174,7 @@ app.component('GDialog', GDialog)
 First, create your Dialog component to launch it from a method. Let's name it InfoDialog.vue
 
 ```html
-<GDialog v-model="value" max-width="300">
+<GDialog v-model="dialogState" max-width="300">
   <div>
     Info Alert
   </div>
