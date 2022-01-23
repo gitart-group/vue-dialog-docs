@@ -341,7 +341,7 @@ Just put them in your global CSS file. Like this:
 ---
 
 ### content-border-radius
-- **Name:** `--g-dialog-border-radius`
+- **Name:** `--g-dialog-content-border-radius`
 
 - **Default:** `4px`
 
@@ -351,7 +351,7 @@ Just put them in your global CSS file. Like this:
 - **Usage:**
 
   ```css
-  --g-dialog-border-radius: 0;
+  --g-dialog-content-border-radius: 0;
   ```
 ---
 
