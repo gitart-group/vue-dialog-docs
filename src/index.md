@@ -21,7 +21,7 @@ page: true
       See examples:
     </span>
     <a class="btn ml-4" href="/examples/">Editable</a>
-    <a class="btn ml-4" href="https://michaelgitart.github.io/gitart-vue-dialog/">Advanced</a>
+    <a class="btn ml-4" href="https://examples.gitart-vue-dialog.gitart.org/">Advanced</a>
   </p>
 </section>
 

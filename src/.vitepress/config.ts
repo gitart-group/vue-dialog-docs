@@ -23,7 +23,7 @@ const nav = [
       },
       {
         text: 'Advanced',
-        link: 'https://michaelgitart.github.io/gitart-vue-dialog/',
+        link: 'https://examples.gitart-vue-dialog.gitart.org/',
       },
     ]
   },
