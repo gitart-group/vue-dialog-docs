@@ -25,6 +25,7 @@ z-index of the component is 200. So be careful. Don't make z-index of the header
 | [local](#local) | `boolean` | `false` |
 | [max-width](#max-width) | `string` `number` | `'none'` |
 | [model-value](#model-value) | `boolean` | `false` |
+| [no-click-animation](#no-click-animation) | `boolean` | `'false'` |
 | [overlay-background](#overlay-background) | `boolean` `string` | `true` |
 | [persistent](#persistent) | `boolean` | `false` |
 | [scrollable](#scrollable) | `boolean` | `false` |
@@ -138,6 +139,18 @@ Sets max-width for the dialog
 
 - **Details:** <br/>
 v-model props to activate and deactivate the dialog
+
+---
+
+### `no-click-animation`
+- **Type:** `Boolean`
+
+- **Default:** `false`
+
+- **Details:** <br/>
+Disables the bounce effect when clicking outside of a dialog's content when using the **persistent** prop.
+
+`v2.0.0+`
 
 ---
 
