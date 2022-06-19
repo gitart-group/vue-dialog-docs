@@ -206,7 +206,7 @@ Applies the `display: flex;` to the dialog content wrapper element. It allows yo
     &-enter-active,
     &-leave-active {
       transition-timing-function: linear;
-      transition-duration: 0.1s; // not higher than 200ms
+      transition-duration: 0.1s;
     }
 
     &-enter-from {
@@ -222,10 +222,10 @@ Applies the `display: flex;` to the dialog content wrapper element. It allows yo
   ```
 
   ::: warning
-    On leaving don't set `transition-duration` higher than `150ms`-`200ms` if you are using
+    On leaving, `transition-duration` should not be higher than plugin `closeDelay` option (`500ms` by default) if you are using
     plugin method [addDialog](/guide/usage/plugin-usage#adddialog-data).
 
-    [removeDialog](/guide/usage/plugin-usage#removedialog-index) disables a dialog and deletes it after 150ms
+    [removeDialog](/guide/usage/plugin-usage#removedialog-index) disables a dialog and deletes it after `closeDelay`ms
     completely, so the custom transition may be truncated
   :::
 
@@ -336,6 +336,22 @@ Just put them in your global CSS file. Like this:
 ```
 
 **List of possible variables:**
+
+### transition-duration
+- **Name:** `--g-dialog-transition-duration`
+
+- **Default:** `0.2s`
+
+- **Details:** <br/>
+  Sets default `transition-duration` for entering and exiting the dialog.
+
+- **Usage:**
+
+  ```css
+  --g-dialog-content-bg: 0.4s;
+  ```
+
+---
 
 ### content-bg
 - **Name:** `--g-dialog-content-bg`
