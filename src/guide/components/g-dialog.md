@@ -348,7 +348,7 @@ Just put them in your global CSS file. Like this:
 - **Usage:**
 
   ```css
-  --g-dialog-content-bg: 0.4s;
+  --g-dialog-transition-duration: 0.4s;
   ```
 
   `v2.2.0+`
