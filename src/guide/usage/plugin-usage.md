@@ -4,6 +4,10 @@ aside: deep
 
 # Plugin Usage
 
+The plugin for the Gitart Dialog is **completely optional**. It's only needed
+if you want adding dialogs by the method [addDialog](/guide/usage/plugin-usage#adddialog-data) not
+including the dialog in the template of some component.
+
 ## Installation
 
 
@@ -12,9 +16,25 @@ aside: deep
 import { plugin as dialogPlugin } from 'gitart-vue-dialog'
 
 const app = Vue.createApp(/* ... */)
-app.use(dialogPlugin)
+app.use(dialogPlugin, {
+  // options
+})
 ```
 
+### Plugin options
+
+#### `closeDelay`
+- **Type:** `Number`
+
+- **Default:** `500`
+
+- **Details:** <br/>
+  It's time in milliseconds after the dialog is closed when the dialogs are removed from the DOM.
+  If you want a long leaving transition, set this value higher.
+
+---
+
+### GDialogRoot
 We strongly recommend using GDialogRoot. It renders your [dialogs](#dialogs). 
 Put it somewhere at the end of the `App.vue`.
 
