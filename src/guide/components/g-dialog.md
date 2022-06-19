@@ -351,6 +351,8 @@ Just put them in your global CSS file. Like this:
   --g-dialog-content-bg: 0.4s;
   ```
 
+  `v2.2.0+`
+
 ---
 
 ### content-bg
