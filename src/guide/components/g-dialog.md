@@ -18,6 +18,7 @@ z-index of the component is 200. So be careful. Don't make z-index of the header
 |:---|:---|:---|
 | [background](#background) | `boolean` `string` | `true` |
 | [border-radius](#border-radius) | `boolean` `number` `string` | `true` |
+| [close-on-back](#close-on-back) | `boolean` | `false` |
 | [content-class](#content-class) | `string` | `''` |
 | [depressed](#depressed) | `boolean` | `false` |
 | [fullscreen](#fullscreen) | `boolean` | `false` |
@@ -65,8 +66,21 @@ z-index of the component is 200. So be careful. Don't make z-index of the header
 
 ---
 
+### `close-on-back`
+- **Type:** `Boolean`
+
+- **Default:** `false`
+
+- **Details:** <br/>
+Allows to close the dialog by navigating back. It's adding hash to the url when
+the dialog is open.
+
+---
+
 ### `content-class`
 - **Type:** `String`
+
+- **Default:** `''`
 
 - **Details:** <br/>
 Applies the class to the content (div that wraps the main slot)
