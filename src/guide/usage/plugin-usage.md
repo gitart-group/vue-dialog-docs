@@ -34,6 +34,53 @@ app.use(dialogPlugin, {
 
 ---
 
+#### `props`
+- **Type:** `Object`
+
+- **Default:** `{}`
+
+- **Details:** <br/>
+  It's default props for all dialogs if you run them by `addDialog` method.
+
+  ```ts
+  app.use(dialogPlugin, {
+    props: {
+      maxWidth: '300px',
+      // ...
+    },
+  })
+
+  // You can override it
+  $dialog.addDialog({
+    component: InfoDialog,
+    props: {
+      maxWidth: '500px',
+    },
+  })
+  ```
+
+  ```ts
+  // It works like this
+  const defaultProps = options?.props ?? {}
+
+  const $dialog = {
+    addDialog: ({ component, props }) => {
+      dialogs.push({
+        component,
+        id: Date.now() + Math.random(),
+
+        props: reactive({
+          modelValue: true,
+          ...defaultProps,
+          ...props,
+        }),
+      })
+    },
+  }
+  ```
+
+---
+
 ### GDialogRoot
 We strongly recommend using GDialogRoot. It renders your [dialogs](#dialogs). 
 Put it somewhere at the end of the `App.vue`.
