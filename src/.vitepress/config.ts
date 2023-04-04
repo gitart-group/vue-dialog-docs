@@ -5,6 +5,8 @@ import baseConfig from '@vue/theme/config'
 import WindiCSS from 'vite-plugin-windicss'
 import { headerPlugin } from './headerMdPlugin'
 
+const isProd = process.env.NODE_ENV === 'production'
+
 const nav = [
   {
     text: 'Quick Start',
@@ -169,6 +171,9 @@ export default defineConfig({
         '@': path.resolve(__dirname, '../'),
         '@theme-components': path.resolve(__dirname, '../.vitepress/theme/components'),
       },
+      dedupe: isProd ? undefined : [
+        'vue'
+      ]
     },
     build: {
       minify: 'terser',

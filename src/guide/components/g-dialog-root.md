@@ -24,10 +24,10 @@ The components just render [$dialog.dialogs](/guide/usage/plugin-usage#dialogs) 
 ```html
 <Component
   :is="dialog.component"
-  v-for="(dialog, index) in dialogs"
+  v-for="(dialog) in dialogs"
   :key="dialog.id"
   v-bind="dialog.props"
-  @update:modelValue="onClose(index)"
+  @update:modelValue="onClose(id)"
 />
 ```
 - `dialogs` - it's array of the plugin dialogs. Details: [$dialog.dialogs](/guide/usage/plugin-usage#dialogs)

@@ -64,17 +64,23 @@ app.use(dialogPlugin, {
   const defaultProps = options?.props ?? {}
 
   const $dialog = {
-    addDialog: ({ component, props }) => {
+    addDialog: ({ component, props, id }, hooks) => {
+      const dialogId = id ?? Date.now() + Math.random()
+
       dialogs.push({
         component,
-        id: Date.now() + Math.random(),
+        id: dialogId,
 
         props: reactive({
           modelValue: true,
           ...defaultProps,
           ...props,
         }),
+
+        onClose: hooks?.onClose,
       })
+
+      return dialogId
     },
   }
   ```
@@ -164,16 +170,53 @@ To know how all these properties work, look below.
 | [removeDialog](#removedialog-index) | `Function` |
 | [dialogs](#dialogs) | `Array` |
 
-### `addDialog(data)`
+### `addDialog(data, hooks)`
 
 - **Type:** `Function`
 
 - **Arguments:**
-  - {Object} data - <code>{ component: DialogComponent, props: { ... } }</code>
+  - {Object} data - <code>{component: DialogComponent, props?: { ... }, id?: string | number }</code>
+  - {Object} hooks - <code>{ onClose: (event) => void }</code>
+
+- **Returns:** `Number` - dialog id
 
 - **Details:** <br/>
   The method adds your extended `data` argument to [dialogs](#dialogs) array.
   The `data.component` will be rendered in the [GDialogRoot](/guide/components/g-dialog-root) with the props you add to `data.props`
+
+  Optionaly you can add `id` to the `data` argument. It's useful if you want to remove the dialog by id.
+
+  ```js
+  const dialogId = $dialog.addDialog({
+    component: InfoDialog,
+    props: {
+      maxWidth: '500px',
+    },
+    id: 'my-dialog-id',
+  })
+
+  // ...
+
+  $dialog.removeDialog(dialogId)
+  ```
+
+  The `hooks` argument is an object with the `onClose` method. It's called when the dialog is closing.
+  It allows you to do something before the dialog is closed or cancel the closing.
+
+  ```js
+  $dialog.addDialog({
+    component: InfoDialog,
+    props: {
+      maxWidth: '500px',
+    },
+  }, {
+    onClose: (event) => {
+      event.cancel() // cancel the closing
+      event.id // dialog id
+      event.item // dialog item from $dialog.dialogs (read more below)
+    },
+  })
+  ```
 
   ::: warning
     `data.props` should not contain modelValue. The `addDialog` overwrites it
@@ -185,16 +228,32 @@ To know how all these properties work, look below.
 
 ---
 
-### `removeDialog(index)` 
+### `removeDialog(id)` 
 
 - **Type:** `Function`
 
 - **Arguments:**
-  - {Number} index
+  - {Number} id
 
 - **Details:** <br/>
-  The method removes item from [dialogs](#dialogs) by index. Useful if you decide to write your own [GDialogRoot](/guide/components/g-dialog-root)
+  The method removes item from [dialogs](#dialogs) by id. Useful if you want to close the dialog programmatically.
 
+  ```js
+  const dialogId = $dialog.addDialog({
+    component: InfoDialog,
+    props: {
+      maxWidth: '500px',
+    },
+    id: 'my-dialog-id',
+  })
+
+  // ...
+
+  $dialog.removeDialog(dialogId)
+  ```
+
+
+  With it you can also write your own [GDialogRoot](/guide/components/g-dialog-root)
 ---
 
 ### `dialogs` 
@@ -211,6 +270,12 @@ To know how all these properties work, look below.
       modelValue: boolean
       // other props
     }
+
+    onClose?: (event: {
+      cancel: () => void
+      id: number
+      item: IDialogItem
+    }) => void
   }
   ```
 
@@ -343,6 +408,12 @@ export default defineComponent({
         props: {
           info: 'Some kind of message from outside InfoDialog',
         },
+      }, {
+        onClose: (event) => {
+          console.log('Dialog is closing')
+          console.log(event)
+          // event.cancel()
+        },
       });
     },
   },
@@ -366,6 +437,12 @@ export default defineComponent({
         component: InfoDialog,
         props: {
           info: 'Some kind of message from outside InfoDialog',
+        },
+      }, {
+        onClose: (event) => {
+          console.log('Dialog is closing')
+          console.log(event)
+          // event.cancel()
         },
       });
     };

@@ -11,7 +11,7 @@
     "@vue/theme": "^0.1.30",
     "@vueuse/core": "^7.5.1",
     "dynamics.js": "^1.1.5",
-    "gitart-vue-dialog": "2.4.0",
+    "gitart-vue-dialog": "3.0.1",
     "gsap": "^3.9.0",
     "sass": "^1.45.2",
     "shiki": "0.10.0",
